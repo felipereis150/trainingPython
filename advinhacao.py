@@ -3,15 +3,20 @@ import random
 print("Bem vindo jogo de advinhação")
 
 secret_number = random.randint(1,99)
+print(secret_number)
 
 guess = int(input("Try to guess the number in a range of 1 to 99: "))
 print ("you entered the number", guess)
 
-if guess == secret_number:
-    print("Correct! You guesse the number")
-elif guess < secret_number:
-    print("try a small number")
+guessed = guess == secret_number
+bigger = guess < secret_number
+smaller = guess > secret_number
+
+if(guessed):
+    print("Correct! You guessed the number")
+elif(bigger):
+    print("try a bigger number")
 else:
-    print("try a greater number")
+    smaller
 
 print("Game over. Run the program to play again")
