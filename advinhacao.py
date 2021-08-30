@@ -3,12 +3,12 @@ import random
 print("Welcome to the guessing game!")
 
 secret_number = random.randint(1,99)
-total_attempts = 3
-remaining_attempts = total_attempts
+round = 1
+attempts = 3
 print(secret_number)
 
-while(remaining_attempts >0):
-    print("Attempt", remaining_attempts, "of", total_attempts)
+for round in range(1, attempts + 1):
+    print("Attempt {} of {}".format(round, attempts))
     guess = int(input("Try to guess the number in a range of 1 to 99: "))
     print ("you entered the number", guess)
 
@@ -18,10 +18,10 @@ while(remaining_attempts >0):
 
     if(guessed):
         print("Correct! You guessed the number")
+        break
     elif(bigger):
         print("try a bigger number")
     else:
-        smaller
-    remaining_attempts -= 1
-    print(total_attempts)
+        print("try a smaller number")
+    round += 1
 print("Game Over")
